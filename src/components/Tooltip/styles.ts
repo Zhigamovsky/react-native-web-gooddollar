@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { SheetFONT, SheetFLEX, Colors, getPercentageValueOf, DeviceSize, isDeviceS } from "../../utils";
+import { SheetFONT, SheetFLEX, Colors, getPercentageValueOf, DeviceSize, isDeviceS, isWeb } from "../../utils";
 
 const Dimensions = {
   containerHeight: DeviceSize.pass([35, 40, 40, 45]),
@@ -30,7 +30,7 @@ export default StyleSheet.create({
     height: Dimensions.iconWrapperWidth,
     backgroundColor: 'transparent',
     ...SheetFLEX(),
-    ...isDeviceS ? {
+    ...isDeviceS || isWeb ? {
       marginBottom: -3,
     } : {}
   },

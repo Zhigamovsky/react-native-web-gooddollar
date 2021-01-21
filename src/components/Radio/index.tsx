@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { RadioProps } from './types';
 import styles from './styles';
@@ -13,21 +13,20 @@ const hitSlopValue = {
       right: this.value
     }
   }
-}
+};
 
 export const Radio = <T,>({
   sense,
   value,
   onValueChange: _onValueChange
 }: RadioProps<T>) => {
+  const validExpression = sense === null ? value : value === sense;
 
-  const validExpression = useMemo(
-    () => sense === null ? value : value === sense,
-    [sense, value]
+  const onValueChange = useCallback(
+    // @ts-expect-error
+    () => _onValueChange(sense === null ? !value : sense),
+    [_onValueChange, sense, value]
   );
-
-  // @ts-expect-error
-  const onValueChange = () => _onValueChange(sense === null ? !value : sense)
 
   return (
     <TouchableOpacity

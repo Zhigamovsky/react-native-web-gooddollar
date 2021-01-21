@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 import { Button as ButtonBase } from 'react-native-elements';
 import { ButtonProps, ButtonStyle } from './types';
 import { isWeb, SheetFONT } from '../../utils';
@@ -10,11 +10,7 @@ export const Button: FC<ButtonProps> = ({
   type = 'fill',
   uppercase = false
 }) => {
-
-  const title = useMemo(
-    () => uppercase ? _title.toUpperCase() : _title,
-    [_title, uppercase]
-  );
+  const title = uppercase ? _title.toUpperCase() : _title;
 
   return (
     <ButtonBase
@@ -36,4 +32,4 @@ export const Button: FC<ButtonProps> = ({
       }}
     />
   )
-}
+};

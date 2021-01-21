@@ -5,38 +5,27 @@ import { GeneralScreenProps } from './types';
 import { Table } from './Table';
 import styles from './styles';
 
-const GeneralScreen: FC<GeneralScreenProps> = ({
-  mockId
-}) => {
-
-  const mockEvents = {
-    save: () => console.log(`Save(): ${mockId}`),
-    cancel: () => console.log(`Save(): ${mockId}`),
-    openTooltip: () => console.log(`OpenTooltip(): ${mockId}`),
-  };
-
-  return (
-    <ScreenContainer>
-      <View style={styles.container}>
-        <Header title='Profile Privacy' uppercase />
-        <Tooltip title='Manage your profile privacy' onPress={mockEvents.openTooltip} />
-        <Table />
-      </View>
-      <View style={styles.bottomContainer}>
-        <Button
-          title='Cancel'
-          onPress={mockEvents.cancel}
-          type='transparent'
-        />
-        <Button
-          title='Save'
-          onPress={mockEvents.save}
-          type='fill'
-          uppercase
-        />
-      </View>
-    </ScreenContainer>
-  );
-}
+const GeneralScreen: FC<GeneralScreenProps> = () => (
+  <ScreenContainer>
+    <View style={styles.container}>
+      <Header title='Profile Privacy' uppercase />
+      <Tooltip title='Manage your profile privacy' onPress={() => { }} />
+      <Table />
+    </View>
+    <View style={styles.bottomContainer}>
+      <Button
+        title='Cancel'
+        onPress={() => { }}
+        type='transparent'
+      />
+      <Button
+        title='Save'
+        onPress={() => { }}
+        type='fill'
+        uppercase
+      />
+    </View>
+  </ScreenContainer>
+);
 
 export default GeneralScreen;

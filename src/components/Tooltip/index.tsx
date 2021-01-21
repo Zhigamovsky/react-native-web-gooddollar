@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
-import { View } from 'react-native';
-import { Button, Image, Text } from 'react-native-elements';
+import { Platform, View } from 'react-native';
+import { Button, Text, Image } from 'react-native-elements';
 import { TooltipProps } from './types';
 import styles from './styles';
-
-const QuestionIcon = require('../../assets/images/Question.png');
+import QuestionIcon from '../../assets/svgs/Question.svg';
 
 export const Tooltip: FC<TooltipProps> = ({
   onPress,
@@ -16,8 +15,16 @@ export const Tooltip: FC<TooltipProps> = ({
     <Button
       buttonStyle={styles.iconWrapper}
       onPress={onPress}
-      icon={<Image style={styles.icon} source={QuestionIcon} />}
+      icon={
+        Platform.select({
+          web: <Image style={styles.icon} source={{ uri: QuestionIcon }} />,
+          default: (
+            <View style={styles.icon}>
+              <QuestionIcon />
+            </View>
+          )
+        })
+      }
     />
   </View>
 );
-
