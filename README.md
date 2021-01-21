@@ -2,8 +2,6 @@
 ____
 ## React Native Web with TypeScript 
 ____
-# Bugfix improvements is in **_bugfix** directory
-____
 #### For responsive layout used:
 * custom DeviceSize.pass() util
 * custom DeviceSize.select() util
