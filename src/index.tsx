@@ -7,10 +7,11 @@ import { isWeb } from './utils';
 export const App = () => {
   const jsx = <GeneralScreen mockId='123' />;
 
-  if (isWeb) {
-    return <SafeAreaProvider>{jsx}</SafeAreaProvider>
+  if (!isWeb) {
+    return jsx;
   }
-  return jsx;
+
+  return <SafeAreaProvider>{jsx}</SafeAreaProvider>;
 }
 
 AppRegistry.registerComponent('example', () => App);

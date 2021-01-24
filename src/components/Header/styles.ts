@@ -1,8 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { Colors, isWeb, SheetFLEX, SheetFONT } from '../../utils';
+import { Colors, isAndroid, isWeb, SheetFLEX, SheetFONT } from '../../utils';
 
 export default StyleSheet.create({
   container: {
+    ...isAndroid ? {
+      marginTop: 20,
+    } : {},
     width: '100%',
     height: 55,
     backgroundColor: Colors.mainBlue,

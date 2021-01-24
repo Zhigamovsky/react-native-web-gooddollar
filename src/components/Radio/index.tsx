@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { View, TouchableOpacity } from 'react-native';
-import { RadioProps } from './types';
+import { IHitSlopValue, RadioProps } from './types';
 import styles from './styles';
 
-const hitSlopValue = {
+const hitSlopValue: IHitSlopValue = {
   value: 10,
   get object() {
     return {
@@ -42,4 +42,4 @@ export const Radio = <T,>({
       </View>
     </TouchableOpacity>
   )
-}
+};

@@ -8,7 +8,7 @@ export default StyleSheet.create({
     ...isDeviceXL ? {
       height: 780
     } : {
-        height: '100vh'
+        height: '90vh'
       }
   },
 });
