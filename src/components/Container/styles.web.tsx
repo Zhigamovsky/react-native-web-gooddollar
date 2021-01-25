@@ -6,9 +6,10 @@ export default StyleSheet.create({
     width: '100%',
     ...SheetFLEX('column', 'center', 'flex-start'),
     ...isDeviceXL ? {
-      height: 780
+      height: 780,
+      maxHeight: '100vh'
     } : {
-        height: '90vh'
+        height: '100vh'
       }
   },
 });
